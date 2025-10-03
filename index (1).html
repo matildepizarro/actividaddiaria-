@@ -1,0 +1,1747 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SESIÓN DIARIA — Matilde Pizarro Toro - Acompañamiento Vocal Afimartivo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#071428;
+    --card:#0b1220;
+    --muted:#9aa4b2;
+    --trans-blue:#5BCEFA;
+    --trans-pink:#F5A9B8;
+    --glass: rgba(255,255,255,0.03);
+    --ok:#16a34a; --danger:#ef4444;
+  }
+
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#e6eef8;background:linear-gradient(180deg,#061424 0%, #071226 70%);}
+  .wrap{max-width:1180px;margin:22px auto;padding:20px;transition:all .28s ease}
+  header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}
+  .title{
+    background: linear-gradient(90deg, rgba(91,206,250,0.95), rgba(245,169,184,0.95));
+    padding:16px;border-radius:14px;color:#021427;box-shadow:0 14px 40px rgba(4,10,20,0.55);
+    transform:translateZ(0); transition:transform .22s ease;
+  }
+  .title:hover{transform:translateY(-3px)}
+  .title h1{margin:0;font-size:18px;letter-spacing:0.2px}
+  .title p{margin:6px 0 0;font-size:13px;color:rgba(2,42,47,0.85);font-weight:700}
+
+  .metaCard{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;color:#dbeafe;box-shadow:0 8px 28px rgba(2,6,23,0.45);min-width:320px;border:1px solid rgba(255,255,255,0.03)}
+  .metaCard .muted{color:var(--muted);font-size:13px;margin-top:6px}
+  .grid{display:grid;grid-template-columns:1fr 460px;gap:16px}
+  @media (max-width:1020px){ .grid{grid-template-columns:1fr} .metaCard{order:2} }
+
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 28px rgba(2,6,23,0.35);color:#eaf6ff;transition:transform .18s ease,box-shadow .18s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(2,6,23,0.45)}
+  .sectionTitle{font-weight:800;font-size:14px;color:#e6f8ff;margin-bottom:10px}
+  .activity{margin-bottom:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.008), rgba(255,255,255,0.002));border:1px solid rgba(255,255,255,0.03)}
+  .activityHeader{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .small{font-size:13px;color:var(--muted)}
+  .subtle{font-size:12px;color:var(--muted);margin-top:6px}
+
+  .checkboxes{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .rep-box{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);transition:background .12s ease,transform .12s ease}
+  .rep-box:hover{transform:translateY(-3px)}
+  .rep-box input[type="checkbox"]{width:18px;height:18px;margin:0;accent-color:var(--trans-blue);transform:scale(1.12)}
+  .rep-label{font-weight:700;color:#dff6ff;font-size:13px;min-width:120px}
+  .goalTag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:13px}
+
+  .meterWrap{display:flex;gap:12px;align-items:center;margin-top:12px}
+  .meter{flex:1;height:18px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+  .meterBar{height:100%;width:0%;background:linear-gradient(90deg,#7CE0FF,#E8A7E0);transition:width 0.08s ease}
+  .meterValue{min-width:96px;text-align:right;font-weight:800;color:#dff6ff}
+
+  .controls{display:flex;gap:8px;flex-wrap:wrap}
+  button.primary{background:var(--trans-blue);background-image:linear-gradient(90deg,var(--trans-blue),var(--trans-pink));border:0;padding:10px 12px;border-radius:10px;color:#021427;font-weight:800;cursor:pointer;box-shadow:0 8px 20px rgba(91,206,250,0.08);transition:transform .12s ease,box-shadow .12s ease}
+  button.primary:hover{transform:translateY(-3px);box-shadow:0 22px 40px rgba(91,206,250,0.12)}
+  button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:#dff6ff;padding:8px 10px;border-radius:8px;cursor:pointer;transition:transform .12s ease}
+  button.ghost:hover{transform:translateY(-2px)}
+  button.warn{background:var(--danger);color:#fff;padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
+
+  .logArea{height:160px;overflow:auto;background:linear-gradient(180deg, rgba(255,255,255,0.007), rgba(255,255,255,0.00));border-radius:8px;padding:12px;border:1px solid rgba(255,255,255,0.02);font-family:monospace;font-size:13px;color:#dff6ff}
+  .borgWrap{margin-top:12px;padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.02)}
+  .borg-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .borg-option-label{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.02);cursor:pointer}
+  .descriptor-label{display:inline-flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+  .savedBadge{margin-left:8px;padding:6px 8px;border-radius:8px;background:rgba(0,0,0,0.2);color:#bfeffd;font-weight:700}
+
+  .pitchCard canvas{width:100%;height:160px;border-radius:8px;background:linear-gradient(180deg,#061426,#071022);display:block;box-shadow:inset 0 -8px 30px rgba(0,0,0,0.4)}
+  .recording-item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02);margin-top:8px}
+  .analysisBadge{display:inline-block;background:linear-gradient(90deg,#0b2430,#072a35);padding:6px 8px;border-radius:8px;color:#bfeffd;font-weight:700;margin-left:8px;box-shadow:0 6px 16px rgba(7,15,20,0.4)}
+  footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center; padding-bottom:8px}
+
+/* --- Floating / draggable panel styling --- */
+  #floatingPanel{
+    position:sticky;
+    top:20px;
+    z-index:20;
+    width: 460px;
+    transition: box-shadow .18s ease, transform .12s ease;
+    cursor: default;
+  }
+  #floatingPanel.floating{
+    position:fixed;
+    box-shadow: 0 28px 80px rgba(3,8,20,0.6);
+    border-radius:10px;
+    background: linear-gradient(180deg, rgba(2,6,15,0.95), rgba(4,10,20,0.96));
+    left: calc(100% - 500px);
+    top: 80px;
+    width:420px;
+  }
+  /* compact mode (achicado) */
+  #floatingPanel.compact{ width: 300px; }
+  #floatingPanel.compact .rightContent .card:nth-child(2) { display:none; } /* hide pitch area if present */
+  #floatingPanel.compact .recording-item { display:none; }
+  /* handle bar */
+  .dragHandle{
+    display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px 8px 0 0;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));cursor:grab;border:1px solid rgba(255,255,255,0.03)
+  }
+  .dragHandle:active{cursor:grabbing}
+  .dragTitle{font-weight:800}
+  .panelActions{display:flex;gap:6px;align-items:center}
+  .iconBtn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px;border-radius:8px;color:#dff6ff;cursor:pointer}
+  .iconBtn:hover{transform:translateY(-2px)}
+  /* minimized */
+  #floatingPanel.minimized .rightContent{display:none}
+  #floatingPanel.minimized{height:auto;width:260px}
+
+  /* floating pitch window (independent) */
+  #pitchWindow{
+    position:fixed;
+    z-index:60;
+    left: 60px;
+    top: 80px;
+    width:420px;
+    border-radius:10px;
+    background: linear-gradient(180deg, rgba(2,6,15,0.98), rgba(4,10,20,0.98));
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 30px 80px rgba(3,8,20,0.6);
+    transition:transform .12s ease;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    resize: both; /* allow native resize on most browsers */
+  }
+  #pitchWindow.minimized{ height:44px; width:240px; }
+  #pitchWindow.hidden{ display:none; }
+  #pitchWindow .pHandle{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 10px; cursor:grab; background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border-bottom:1px solid rgba(255,255,255,0.02)}
+  #pitchWindow .pContent{ padding:10px; display:block; }
+  #pitchWindow .resizer{ position:absolute; right:6px; bottom:6px; width:14px; height:14px; cursor:se-resize; background:rgba(255,255,255,0.03); border-radius:3px; display:block; }
+
+/* small screens */
+  @media (max-width:1020px){
+    #floatingPanel{position:static;width:100%}
+    #floatingPanel.floating{position:fixed;left:10px;right:10px;width:auto}
+    #pitchWindow{left:10px;right:10px;width:auto}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header style="align-items:center">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="title" role="banner" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <div>
+            <h1>SESIÓN DIARIA — Matilde Pizarro Toro - Acompañamiento Vocal Afimartivo</h1>
+            <p>Registro de repeticiones, medición sonora y Borg CR-10 integrado.</p>
+          </div>
+          <!-- Botón al inicio para mostrar/ocultar el gráfico F0 -->
+          <div style="margin-left:8px">
+            <button id="togglePitchVisibilityBtn" class="primary" title="Mostrar / Ocultar gráfico F0">Ocultar gráfico F0</button>
+          </div>
+        </div>
+        <!-- espacio para pequeño subtítulo o estado -->
+        <div style="display:flex;gap:10px;align-items:center">
+          <div class="small" id="pitchVisibilityLabel">Gráfico F0: visible (ventana flotante)</div>
+          <div class="small" id="sessionSummarySmall" style="color:var(--muted)"></div>
+        </div>
+      </div>
+
+      <div class="metaCard card" role="region" aria-label="Metadatos de sesión">
+        <div style="font-weight:800;font-size:15px">Paciente</div>
+        <div style="font-weight:700;font-size:16px;margin-top:6px">Matilde Pizarro Toro</div>
+
+        <div class="muted" style="margin-top:10px">Fecha de sesión (ingrésela y presione guardar):</div>
+        <div style="display:flex;gap:8px;margin-top:6px">
+          <input id="sessionDateInput" placeholder="DD-MM-YYYY o libre" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#dff6ff">
+          <button class="ghost" id="saveDateBtn">Guardar fecha</button>
+        </div>
+        <div id="savedDateBadge" class="subtle" style="margin-top:8px">Fecha guardada: <strong id="sessionDateDisplay">—</strong></div>
+
+        <div class="muted" style="margin-top:10px">Instrucciones breves:</div>
+        <div class="subtle" style="margin-top:6px">Marca casillas conforme la paciente completa cada repetición. Active el micrófono para registrar niveles sonoros y usar la lectura visual automática. Para medir frases pulse 'Medir' y lea la frase durante la medición.</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left column -->
+      <div>
+        <div class="card">
+          <div class="sectionTitle">Bloques de actividad</div>
+
+          <!-- BLOQUE 1 -->
+          <div id="b1" class="activity">
+            <div class="activityHeader">
+              <div>
+                <div style="font-weight:800">BLOQUE 1 — EJERCICIOS CON FONEMA /M/</div>
+                <div class="small">Marca las casillas por cada repetición realizada.</div>
+              </div>
+              <div class="small">
+                <button class="ghost borg-toggle" data-act="b1">Borg CR-10</button>
+                <button class="ghost" onclick="resetActivity('b1')">Reiniciar</button>
+              </div>
+            </div>
+
+            <div style="margin-top:10px">
+              <div class="rep-line">
+                <div class="rep-label">M sostenida</div>
+                <div class="goalTag">Meta: 5</div>
+                <div class="checkboxes" data-activity="b1_m_sostenida"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">M glissando</div>
+                <div class="goalTag">Meta: 5</div>
+                <div class="checkboxes" data-activity="b1_m_gliss"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">M tono de sirena</div>
+                <div class="goalTag">Meta: 5</div>
+                <div class="checkboxes" data-activity="b1_m_siren"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">Melodía vocal (cumpleaños) con /M/</div>
+                <div class="goalTag">Meta: 3</div>
+                <div class="checkboxes" data-activity="b1_m_cumple"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">Humming con /M/</div>
+                <div class="goalTag">Meta: 3</div>
+                <div class="checkboxes" data-activity="b1_m_humming"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOQUE 2 -->
+          <div id="b2" class="activity">
+            <div class="activityHeader">
+              <div>
+                <div style="font-weight:800">BLOQUE 2 — FONACIÓN EN TUBO (/U/)</div>
+                <div class="small">Marca las casillas por cada repetición realizada.</div>
+              </div>
+              <div class="small">
+                <button class="ghost borg-toggle" data-act="b2">Borg CR-10</button>
+                <button class="ghost" onclick="resetActivity('b2')">Reiniciar</button>
+              </div>
+            </div>
+
+            <div style="margin-top:10px">
+              <div class="rep-line">
+                <div class="rep-label">U sostenida</div>
+                <div class="goalTag">Meta: 5</div>
+                <div class="checkboxes" data-activity="b2_u_sost"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">U glissando</div>
+                <div class="goalTag">Meta: 5</div>
+                <div class="checkboxes" data-activity="b2_u_gliss"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">U tono de sirena</div>
+                <div class="goalTag">Meta: 5</div>
+                <div class="checkboxes" data-activity="b2_u_siren"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">U tono en espiral</div>
+                <div class="goalTag">Meta: 5</div>
+                <div class="checkboxes" data-activity="b2_u_espiral"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">U tono con acento (UuUuUu)</div>
+                <div class="goalTag">Meta: 5</div>
+                <div class="checkboxes" data-activity="b2_u_accent"></div>
+              </div>
+
+              <div class="rep-line" style="margin-top:10px">
+                <div class="rep-label">U melódica (cumpleaños) con /U/</div>
+                <div class="goalTag">Meta: 3</div>
+                <div class="checkboxes" data-activity="b2_u_cumple"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOQUE 3 -->
+          <div id="b3" class="activity">
+            <div class="activityHeader">
+              <div>
+                <div style="font-weight:800">BLOQUE 3 — Lecturas y producción comunicativa</div>
+                <div class="small">Marca cuántas veces se realizó cada modalidad (casillas). Para cada frase con énfasis, puede medir y grabar automáticamente el fragmento.</div>
+              </div>
+              <div class="small">
+                <button class="ghost borg-toggle" data-act="b3">Borg CR-10</button>
+                <button class="ghost" onclick="resetActivity('b3')">Reiniciar</button>
+              </div>
+            </div>
+
+            <div style="margin-top:10px">
+              <div class="rep-line">
+                <div class="rep-label">Lectura de frases con énfasis</div>
+                <div class="goalTag">Mediciones por frase</div>
+                <div class="checkboxes" data-activity="b3_frases"></div>
+              </div>
+
+              <div style="margin-top:12px">
+                <div style="font-weight:800;margin-bottom:8px">Lista de frases y variantes (pulse <strong>Medir</strong> y lea la frase durante la medición)</div>
+                <div id="phrasesContainer"></div>
+              </div>
+
+              <div style="margin-top:10px" class="rep-line">
+                <div class="rep-label">Lectura de texto en voz alta</div>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div class="goalTag">Veces</div>
+                  <div class="checkboxes" data-activity="b3_texto" style="margin-left:8px;width:auto"></div>
+                </div>
+                <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+                  <button class="ghost" id="measure_texto_btn">Medir y grabar (12s)</button>
+                  <span id="texto_result" class="analysisBadge">Sin medir</span>
+                </div>
+              </div>
+
+              <div style="margin-top:10px" class="rep-line">
+                <div class="rep-label">Lectura de cuento a alguien más</div>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div class="goalTag">Veces</div>
+                  <div class="checkboxes" data-activity="b3_cuento" style="margin-left:8px;width:auto"></div>
+                </div>
+                <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+                  <button class="ghost" id="measure_cuento_btn">Medir y grabar (25s)</button>
+                  <span id="cuento_result" class="analysisBadge">Sin medir</span>
+                </div>
+              </div>
+
+              <div style="margin-top:12px">
+                <div style="font-weight:800;margin-bottom:8px">Texto para "Lectura de texto en voz alta"</div>
+                <div class="subtle">“El shoegaze es un estilo musical que nació en el Reino Unido a finales de los años ochenta.
+Se caracteriza por el uso de guitarras con muchos efectos, voces etéreas y un sonido envolvente, casi hipnótico.
+El nombre proviene de la costumbre de los músicos de mirar sus pedales de efectos durante los conciertos, como si miraran sus propios zapatos.
+Bandas como My Bloody Valentine y Slowdive son referentes del género.
+Hoy, el shoegaze sigue inspirando a artistas de todo el mundo por su atmósfera soñadora y profunda.”</div>
+
+              <div style="margin-top:12px">
+                <div style="font-weight:800;margin-bottom:8px">Texto para "Lectura de cuento a alguien más"</div>
+                <div class="subtle">El faro y la mariposa
+
+Había una vez un faro solitario, que cada noche encendía su luz para guiar a los barcos en la oscuridad.
+Un día, mientras brillaba, una pequeña mariposa se posó sobre su cristal.
+El faro, sorprendido, le preguntó:
+—¿No te asusta tanta claridad?
+La mariposa respondió:
+—Al contrario, me recuerda que incluso en la noche más oscura, siempre hay un punto de luz.
+
+Desde entonces, el faro ya no se sintió solo, porque comprendió que su luz no solo servía para los barcos, sino también para iluminar corazones pequeños, como el de aquella mariposa.</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:12px;display:flex;flex-direction:column;gap:12px">
+          <div class="sectionTitle">Acciones</div>
+          <div class="controls">
+            <button class="primary" onclick="exportZipSession()">Exportar ZIP (PDF + Audios)</button>
+            <button class="ghost" onclick="exportInformeSesionCompleto()">Exportar PDF</button>
+            <button class="ghost" onclick="generateSessionCSV()">Exportar CSV</button>
+            <button class="ghost" onclick="showLog()">Mostrar registro</button>
+            <button class="ghost" onclick="resetAll()">Reiniciar todo</button>
+          </div>
+          <div>
+            <div class="subtle" style="margin-top:6px">El ZIP incluirá el PDF completo y todas las grabaciones registradas durante la sesión. PDF y CSV incluyen análisis por frase/texto/cuento (F0 media/min/max/rango/% femenino), Borg, y registros. Se incluye además un resumen analítico agregado.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column: floating/draggable panel -->
+      <aside>
+        <div id="floatingPanel">
+          <div class="dragHandle" id="dragHandle">
+            <div class="dragTitle">Herramientas: Sonómetro · Grabaciones</div>
+            <div class="panelActions">
+              <button class="iconBtn" id="toggleDockBtn" title="Dock / Flotar">Flotar</button>
+              <button class="iconBtn" id="shrinkBtn" title="Achicar / Expandir">Achicar</button>
+              <button class="iconBtn" id="minimizeBtn" title="Minimizar">—</button>
+            </div>
+          </div>
+
+          <div class="rightContent">
+            <div class="card">
+              <div class="sectionTitle">Sonómetro — control</div>
+              <div class="controls" style="margin-bottom:10px">
+                <button class="primary" id="startAudio">Iniciar micrófono</button>
+                <button class="ghost" id="stopAudio" disabled>Detener</button>
+                <button class="ghost" id="setCalib">Calibrar</button>
+                <input id="calibKnown" placeholder="Valor dB (ej: 70)" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#dff6ff">
+              </div>
+
+              <div class="meterWrap">
+                <div class="meter"><div id="meterFill" class="meterBar"></div></div>
+                <div class="meterValue" id="splDisplay">-- dB</div>
+              </div>
+
+              <div style="margin-top:12px">
+                <div style="font-weight:700">Lectura visual — contador automático</div>
+                <div class="subtle" style="margin-top:6px">Si el nivel supera el umbral objetivo, se contabiliza un "cruce" y se guarda el timestamp.</div>
+
+                <div style="margin-top:10px;padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.02)">
+                  <div style="display:flex;justify-content:space-between;align-items:center">
+                    <div style="font-weight:800">Lectura de texto (visual)</div>
+                    <div class="goalTag">Meta: <span id="a_lectura_texto_target_label">65 dB</span></div>
+                  </div>
+                  <div style="margin-top:8px">
+                    <div class="meter" id="a_lectura_texto_visual_meter"><div id="a_lectura_texto_visual_meter_bar" class="meterBar" style="opacity:0.9"></div></div>
+                    <div style="display:flex;justify-content:space-between;margin-top:8px">
+                      <div class="subtle">Nivel: <strong id="a_lectura_texto_visual_meter_db">-- dB</strong></div>
+                      <div style="font-weight:700">Cruces: <span id="a_lectura_texto_counter">0</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div class="sectionTitle">Grabaciones — registrar avances</div>
+                <div class="small">Graba y descarga audios de la sesión</div>
+              </div>
+
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <button class="primary" id="startRecBtn">Grabar</button>
+                <button class="ghost" id="stopRecBtn" disabled>Detener</button>
+                <input type="file" id="uploadAudio" accept="audio/*" multiple style="background:transparent;color:#dff6ff">
+              </div>
+
+              <div id="recordingsList" style="margin-top:10px"></div>
+              <div class="subtle" style="margin-top:8px">Las grabaciones se pueden reproducir y descargar. Las mediciones de frases y lecturas generan grabaciones automáticas con nombre descriptivo.</div>
+            </div>
+
+            <div class="card" style="margin-top:12px">
+              <div class="sectionTitle">Registro de sesión</div>
+              <div id="logArea" class="logArea">Interfaz lista. Active el micrófono para medición sonora y gráfico de tono. Pulse "Medir" en cada frase/lectura para obtener análisis acústico.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div style="font-weight:700">Acompañamiento Vocal Afimartivo — Registro de sesión</div>
+    </footer>
+  </div>
+
+  <!-- Floating independent pitch window -->
+  <div id="pitchWindow" aria-label="Gráfico de tono F0">
+    <div class="pHandle" id="pHandle">
+      <div style="font-weight:800">Gráfico de tono (F0) — tiempo real</div>
+      <div style="display:flex;gap:6px;align-items:center">
+        <div id="genderEstimate" class="small" style="margin-right:8px">Género estimado: —</div>
+        <button class="iconBtn" id="togglePitchMin" title="Minimizar">—</button>
+        <button class="iconBtn" id="closePitch" title="Cerrar">✕</button>
+      </div>
+    </div>
+    <div class="pContent" id="pContent">
+      <canvas id="pitchCanvas" width="420" height="200"></canvas>
+      <div class="subtle" style="margin-top:8px;padding-bottom:8px">Bandas de género orientativas. El gráfico muestra F0 estimado en Hz en tiempo real (ventana móvil).</div>
+    </div>
+    <div class="resizer" id="pitchResizer" title="Redimensionar"></div>
+  </div>
+
+  <!-- Librerías externas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script>
+/* v10:
+ - Añade botón al inicio para mostrar/ocultar pitchWindow (estado en localStorage).
+ - Genera resumen analítico agregado y lo incluye en CSV y PDF (y log).
+ - Mantiene toda la funcionalidad previa (mediciones, grabaciones, sonómetro, Borg, export ZIP).
+*/
+
+/* ---------- helpers / estado ---------- */
+let savedSessionDate = '';
+function log(txt){
+  const la = document.getElementById('logArea');
+  const time = new Date().toLocaleTimeString();
+  if(la) la.insertAdjacentText('afterbegin', '['+time+'] ' + txt + '\n');
+}
+
+/* ---------- Fecha sesión ---------- */
+document.getElementById('saveDateBtn').addEventListener('click', function(){
+  const val = document.getElementById('sessionDateInput').value.trim();
+  savedSessionDate = val;
+  document.getElementById('sessionDateDisplay').textContent = savedSessionDate || '—';
+  log('Fecha de sesión guardada: ' + (savedSessionDate || '(vacía)'));
+});
+
+/* ---------- Actividades / checkboxes ---------- */
+const activities = {
+  'b1_m_sostenida': 5,'b1_m_gliss': 5,'b1_m_siren': 5,'b1_m_cumple': 3,'b1_m_humming': 3,
+  'b2_u_sost': 5,'b2_u_gliss': 5,'b2_u_siren': 5,'b2_u_espiral': 5,'b2_u_accent': 5,'b2_u_cumple': 3,
+  'b3_frases': 6,'b3_texto': 6,'b3_cuento': 4
+};
+const labels = {
+  'b1_m_sostenida':'B1 - M sostenida','b1_m_gliss':'B1 - M glissando','b1_m_siren':'B1 - M tono sirena','b1_m_cumple':'B1 - Melodía cumple /M/','b1_m_humming':'B1 - Humming /M/',
+  'b2_u_sost':'B2 - U sostenida','b2_u_gliss':'B2 - U glissando','b2_u_siren':'B2 - U tono sirena','b2_u_espiral':'B2 - U tono espiral','b2_u_accent':'B2 - U con acento','b2_u_cumple':'B2 - Melodía cumple /U/',
+  'b3_frases':'B3 - Lectura frases con énfasis','b3_texto':'B3 - Lectura texto en voz alta','b3_cuento':'B3 - Lectura cuento a otro'
+};
+document.querySelectorAll('.checkboxes').forEach(function(container){
+  const activity = container.getAttribute('data-activity');
+  const n = activities[activity] || 6;
+  container.innerHTML = '';
+  for(let i=1;i<=n;i++){
+    const box = document.createElement('label');
+    box.className = 'rep-box';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.name = activity + '_cb';
+    cb.dataset.activity = activity;
+    cb.dataset.index = i;
+    cb.addEventListener('change', onCheckboxChange);
+    box.appendChild(cb);
+    const txt = document.createElement('div'); txt.style.fontSize='13px'; txt.style.color='#dff6ff'; txt.textContent = i;
+    box.appendChild(txt);
+    container.appendChild(box);
+  }
+});
+function onCheckboxChange(e){
+  const cb = e.target;
+  const activity = cb.dataset.activity;
+  const count = document.querySelectorAll('input[name="'+activity+'_cb"]:checked').length;
+  log(`[${labels[activity]||activity}] casillas marcadas: ${count}`);
+}
+
+/* ---------- Sonómetro, lectura visual, pitchProcessor y dibujo de F0 ---------- */
+let globalStream = null;
+let audioCtx, analyser, sourceNode, running=false, rafId;
+let calibrationOffset=0; window._lastSpl = null;
+const splDisplay = document.getElementById('splDisplay');
+const meterFill = document.getElementById('meterFill');
+
+async function startAudio(){
+  if(running) return;
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({audio:{channelCount:1},video:false});
+    globalStream = stream;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = audioCtx.createAnalyser();
+    analyser.fftSize = 2048;
+    analyser.smoothingTimeConstant = 0.15;
+    sourceNode = audioCtx.createMediaStreamSource(stream);
+    sourceNode.connect(analyser);
+    running = true;
+    document.getElementById('startAudio').disabled = true;
+    document.getElementById('stopAudio').disabled = false;
+    loopAudio();
+    if(!pitchProcessor.initialized){ pitchProcessor.init(stream); }
+    log('Micrófono: activo');
+  }catch(e){
+    alert('Error al acceder al micrófono: ' + (e.message||e));
+  }
+}
+function stopAudio(){
+  if(!running) return;
+  if(sourceNode && sourceNode.mediaStream) sourceNode.mediaStream.getTracks().forEach(t=>t.stop());
+  if(audioCtx) audioCtx.close();
+  running=false;
+  document.getElementById('startAudio').disabled=false;
+  document.getElementById('stopAudio').disabled=true;
+  cancelAnimationFrame(rafId);
+  meterFill.style.width='0%';
+  if(splDisplay) splDisplay.textContent='-- dB';
+  window._lastSpl = null;
+  pitchProcessor.stop();
+  log('Micrófono: detenido');
+}
+function computeDB(buffer){
+  let sum=0;
+  for(let i=0;i<buffer.length;i++){ const v=buffer[i]; sum += v*v; }
+  const rms = Math.sqrt(sum / buffer.length);
+  if(rms <= 0) return null;
+  const dbfs = 20 * Math.log10(rms);
+  const estimated = Math.round((dbfs + calibrationOffset) * 10) / 10;
+  return estimated;
+}
+function loopAudio(){
+  const buffer = new Float32Array(analyser.fftSize);
+  analyser.getFloatTimeDomainData(buffer);
+  const spl = computeDB(buffer);
+  window._lastSpl = (spl === null) ? null : spl;
+  updateGlobalMeter(window._lastSpl);
+  updateReadingVisualFromGlobal();
+  rafId = requestAnimationFrame(loopAudio);
+}
+function updateGlobalMeter(spl){
+  const min = 30, max = 95;
+  if(spl === null || isNaN(spl)){ splDisplay.textContent='-- dB'; meterFill.style.width='0%'; return; }
+  splDisplay.textContent = spl + ' dB';
+  const pct = Math.max(0, Math.min(100, ((spl - min) / (max - min)) * 100));
+  meterFill.style.width = pct + '%';
+}
+document.getElementById('startAudio').addEventListener('click', startAudio);
+document.getElementById('stopAudio').addEventListener('click', stopAudio);
+document.getElementById('setCalib').addEventListener('click', async ()=>{
+  const v = parseFloat(document.getElementById('calibKnown').value);
+  if(!running){ alert('Inicia medición antes de calibrar.'); return; }
+  if(isNaN(v)){ alert('Introduce valor numérico para calibración.'); return; }
+  let sum=0, n=6;
+  for(let i=0;i<n;i++){ await new Promise(r=>setTimeout(r,120)); sum += (window._lastSpl === null ? 0 : window._lastSpl); }
+  const measured = sum / n;
+  const offset = v - measured;
+  calibrationOffset += offset;
+  window._calibrationInfo = 'Offset aplicado: ' + (Math.round(calibrationOffset*10)/10) + ' dB — referencia ' + v + ' dB';
+  alert('Calibración aplicada. ' + window._calibrationInfo);
+  log('Calibración: ' + window._calibrationInfo);
+});
+
+/* lectura visual */
+const READING_TARGET_DB = 65;
+if(typeof window.__a_lectura_texto_counter === 'undefined') window.__a_lectura_texto_counter = 0;
+if(typeof window.__a_lectura_texto_prevBelow === 'undefined') window.__a_lectura_texto_prevBelow = true;
+if(typeof window.__a_lectura_texto_timestamps === 'undefined') window.__a_lectura_texto_timestamps = [];
+function updateReadingVisualFromGlobal(){
+  const elBar = document.getElementById('a_lectura_texto_visual_meter_bar');
+  const elDb = document.getElementById('a_lectura_texto_visual_meter_db');
+  const elCounter = document.getElementById('a_lectura_texto_counter');
+  const spl = (typeof window._lastSpl !== 'undefined' && window._lastSpl !== null) ? window._lastSpl : null;
+  if(spl === null || isNaN(spl)){
+    if(elBar) elBar.style.width='0%';
+    if(elDb) elDb.textContent='-- dB';
+    return;
+  }
+  const min=30, max=95;
+  let pc = ((spl - min) / (max - min)) * 100; pc = Math.max(0,Math.min(100,pc));
+  if(elBar) elBar.style.width = pc + '%';
+  if(elDb) elDb.textContent = spl + ' dB';
+
+  const crossed = spl >= READING_TARGET_DB;
+  if(crossed && window.__a_lectura_texto_prevBelow){
+    window.__a_lectura_texto_counter = (window.__a_lectura_texto_counter || 0) + 1;
+    if(elCounter) elCounter.textContent = window.__a_lectura_texto_counter;
+    window.__a_lectura_texto_timestamps.push({ ts: new Date().toISOString(), spl: String(spl), count: window.__a_lectura_texto_counter });
+    if(elBar) elBar.animate([{ boxShadow: '0 0 0px rgba(0,0,0,0)' }, { boxShadow: '0 0 18px rgba(124,58,237,0.18)' }, { boxShadow: '0 0 0px rgba(0,0,0,0)' }], { duration: 420, easing: 'ease-out' });
+    log('Lectura visual: cruces → ' + window.__a_lectura_texto_counter + ' (' + spl + ' dB)');
+  }
+  window.__a_lectura_texto_prevBelow = !crossed;
+}
+
+/* pitch detection & graph (autocorr) */
+const pitchCanvas = document.getElementById('pitchCanvas');
+const pitchCtx = pitchCanvas.getContext('2d');
+const canvasW = pitchCanvas.width;
+const canvasH = pitchCanvas.height;
+const pitchData = [];
+const maxPoints = 250;
+const genderLabelEl = document.getElementById('genderEstimate');
+const pitchParams = { sampleRate: 44100, minFreq: 60, maxFreq: 500 };
+
+const pitchProcessor = {
+  initialized: false,
+  running: false,
+  stream: null,
+  analyserNode: null,
+  ctx: null,
+  tempBuf: null,
+  init: function(stream){
+    if(this.initialized) return;
+    try{
+      this.stream = stream;
+      this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+      pitchParams.sampleRate = this.ctx.sampleRate || 44100;
+      this.analyserNode = this.ctx.createAnalyser();
+      this.analyserNode.fftSize = 4096;
+      this.analyserNode.smoothingTimeConstant = 0.02;
+      this.source = this.ctx.createMediaStreamSource(stream);
+      this.source.connect(this.analyserNode);
+      this.tempBuf = new Float32Array(this.analyserNode.fftSize);
+      this.initialized = true;
+      this.running = true;
+      this.processLoop();
+    }catch(e){
+      console.warn('Pitch init error', e);
+    }
+  },
+  stop: function(){
+    this.running = false;
+    try{ if(this.ctx) this.ctx.close(); }catch(e){}
+    this.initialized = false;
+  },
+  processLoop: function(){
+    if(!this.running) return;
+    this.analyserNode.getFloatTimeDomainData(this.tempBuf);
+    const f = detectPitchAutoCorr(this.tempBuf, pitchParams.sampleRate, pitchParams.minFreq, pitchParams.maxFreq);
+    if(f && !isNaN(f) && f > 0){
+      pitchData.push({ t: Date.now(), f: Math.round(f*10)/10 });
+      if(pitchData.length > maxPoints) pitchData.shift();
+      const gender = estimateGenderFromF0(f);
+      genderLabelEl.textContent = 'Género estimado: ' + gender + ' (' + Math.round(f) + ' Hz)';
+    } else {
+      pitchData.push({ t: Date.now(), f: null });
+      if(pitchData.length > maxPoints) pitchData.shift();
+      genderLabelEl.textContent = 'Género estimado: —';
+    }
+    drawPitchCanvas();
+    requestAnimationFrame(()=>this.processLoop());
+  }
+};
+
+function detectPitchAutoCorr(buf, sampleRate, minFreq=60, maxFreq=500){
+  let size = buf.length;
+  let rms=0;
+  for(let i=0;i<size;i++){ const val=buf[i]; rms+=val*val; }
+  rms = Math.sqrt(rms/size);
+  if(rms < 0.001) return null;
+  let bestOffset = -1; let bestCorr = 0;
+  const minLag = Math.floor(sampleRate / maxFreq);
+  const maxLag = Math.floor(sampleRate / minFreq);
+  for(let lag = minLag; lag <= maxLag; lag++){
+    let corr = 0;
+    for(let i=0;i+lag < size; i++){
+      corr += Math.abs(buf[i] - buf[i+lag]);
+    }
+    corr = 1 - (corr / (size - maxLag));
+    if(corr > bestCorr){
+      bestCorr = corr; bestOffset = lag;
+    }
+  }
+  if(bestCorr > 0.4 && bestOffset > 0){
+    return sampleRate / bestOffset;
+  }
+  return null;
+}
+
+function estimateGenderFromF0(f){
+  if(f === null) return '—';
+  if(f < 165) return 'Male';
+  if(f >= 165 && f <= 250) return 'Androgynous';
+  return 'Female';
+}
+
+function drawPitchCanvas(){
+  const ctx = pitchCtx;
+  const W = pitchCanvas.width = Math.max(260, pitchCanvas.clientWidth);
+  const H = pitchCanvas.height = Math.max(120, pitchCanvas.clientHeight);
+  // recalibrate for current canvas size
+  function yFromHz(hz){
+    const minHz = 50, maxHz = 450;
+    const clamped = Math.max(minHz, Math.min(maxHz, hz));
+    const pct = (clamped - minHz) / (maxHz - minHz);
+    return H - (pct * H);
+  }
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle = 'rgba(10,20,40,0.6)';
+  ctx.fillRect(0,0,W,H);
+  ctx.fillStyle = 'rgba(245,169,184,0.12)';
+  const y250 = yFromHz(250);
+  ctx.fillRect(0,0,W,y250);
+  ctx.fillStyle = 'rgba(255,255,255,0.04)';
+  const y165 = yFromHz(165);
+  ctx.fillRect(0,y250,W,y165 - y250);
+  ctx.fillStyle = 'rgba(91,206,250,0.08)';
+  ctx.fillRect(0,y165,W,H - y165);
+
+  ctx.strokeStyle = 'rgba(255,255,255,0.06)'; ctx.lineWidth=1;
+  [100,150,200,250,300,350,400].forEach(freq=>{
+    const y = yFromHz(freq);
+    ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,0.12)'; ctx.font='10px Inter';
+    ctx.fillText(freq + ' Hz', 4, y - 4);
+  });
+
+  ctx.beginPath();
+  const len = pitchData.length;
+  for(let i=0;i<len;i++){
+    const el = pitchData[i];
+    const x = (i / Math.max(1, maxPoints-1)) * W;
+    const f = el.f;
+    const y = f ? yFromHz(f) : H - 2;
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  }
+  ctx.strokeStyle = 'rgba(255,120,170,0.95)'; ctx.lineWidth = 2; ctx.stroke();
+
+  const last = pitchData[pitchData.length-1];
+  if(last && last.f){
+    const x = W * ((pitchData.length-1) / Math.max(1, maxPoints-1));
+    const y = yFromHz(last.f);
+    ctx.fillStyle = '#fff';
+    ctx.beginPath(); ctx.arc(x,y,3,0,Math.PI*2); ctx.fill();
+  }
+}
+
+/* seed pitchData */
+for(let i=0;i<maxPoints;i++) pitchData.push({ t: Date.now() - (maxPoints-i)*100, f: null });
+drawPitchCanvas();
+
+/* ---------- Grabaciones & subida ---------- */
+let mediaRecorder = null;
+let recordedChunks = [];
+const recordings = []; // {name, blob, date, url, phraseKey?, phraseText?}
+document.getElementById('startRecBtn').addEventListener('click', startRecording);
+document.getElementById('stopRecBtn').addEventListener('click', stopRecording);
+document.getElementById('uploadAudio').addEventListener('change', handleUploadFiles);
+
+async function startRecording(){
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({ audio:true });
+    mediaRecorder = new MediaRecorder(stream);
+    recordedChunks = [];
+    mediaRecorder.ondataavailable = e => { if(e.data && e.data.size) recordedChunks.push(e.data); };
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(recordedChunks, { type:'audio/webm' });
+      const url = URL.createObjectURL(blob);
+      const name = 'grabacion_' + new Date().toISOString().replace(/[:.]/g,'-') + '.webm';
+      const rec = { name, blob, date: new Date().toISOString(), url };
+      recordings.push(rec);
+      renderRecordings();
+      log('Grabación guardada: ' + name);
+      try{ stream.getTracks().forEach(t=>t.stop()); }catch(e){}
+    };
+    mediaRecorder.start();
+    document.getElementById('startRecBtn').disabled=true;
+    document.getElementById('stopRecBtn').disabled=false;
+    log('Grabación: iniciada');
+  }catch(e){
+    alert('No se pudo iniciar la grabación: ' + (e.message||e));
+  }
+}
+
+function stopRecording(){
+  if(mediaRecorder && mediaRecorder.state === 'recording'){
+    mediaRecorder.stop();
+    document.getElementById('startRecBtn').disabled=false;
+    document.getElementById('stopRecBtn').disabled=true;
+    log('Grabación: detenida');
+  }
+}
+function handleUploadFiles(e){
+  const files = Array.from(e.target.files || []);
+  files.forEach(file=>{
+    const url = URL.createObjectURL(file);
+    const rec = { name: file.name, blob: file, date: new Date().toISOString(), url, uploaded: true };
+    recordings.push(rec);
+    log('Archivo subido: ' + file.name);
+  });
+  renderRecordings();
+  e.target.value = '';
+}
+function renderRecordings(){
+  const list = document.getElementById('recordingsList');
+  list.innerHTML = '';
+  recordings.forEach((r, idx)=>{
+    const div = document.createElement('div'); div.className = 'recording-item';
+    const info = document.createElement('div'); info.style.flex='1';
+    info.innerHTML = '<div style="font-weight:700">'+ r.name +'</div><div class="subtle">' + r.date + (r.phraseText ? ' · ' + (r.phraseText.length>40? r.phraseText.slice(0,40)+'...': r.phraseText) : '') + '</div>';
+    const controls = document.createElement('div'); controls.style.display='flex'; controls.style.gap='8px';
+    const play = document.createElement('button'); play.className='ghost'; play.textContent='Reproducir'; play.addEventListener('click', ()=>{ const audio = new Audio(r.url); audio.play(); });
+    const dl = document.createElement('a'); dl.className='ghost'; dl.textContent='Descargar'; dl.href = r.url; dl.download = r.name;
+    controls.appendChild(play); controls.appendChild(dl);
+    div.appendChild(info); div.appendChild(controls);
+    list.appendChild(div);
+  });
+}
+
+/* ---------- Frases / mediciones ---------- */
+const phraseGroups = [
+  {
+    id: 'p1',
+    base: 'Yo no dije que ella lo hizo.',
+    variants: [
+      'Yo no dije que ella lo hizo. (fui otra persona).',
+      'Yo no dije que ella lo hizo. (lo negué).',
+      'Yo no dije que ella lo hizo. (lo insinué, no lo dije).',
+      'Yo no dije que ella lo hizo. (fue otra persona).',
+      'Yo no dije que ella lo hizo. (lo pensó, lo intentó, etc.).'
+    ]
+  },
+  {
+    id: 'p2',
+    base: 'Mañana vamos al parque.',
+    variants: [
+      'Mañana vamos al parque. (no hoy).',
+      'Mañana vamos al parque. (sí o sí iremos).',
+      'Mañana vamos al parque. (no a otro lugar).'
+    ]
+  },
+  {
+    id: 'p3',
+    base: 'Quiero que vengas conmigo.',
+    variants: [
+      'Quiero que vengas conmigo. (es mi deseo).',
+      'Quiero que vengas conmigo. (no que te quedes).',
+      'Quiero que vengas conmigo. (no con otra persona).'
+    ]
+  },
+  {
+    id: 'p4',
+    base: 'Ese libro es muy interesante.',
+    variants: [
+      'Ese libro es muy interesante. (no otro).',
+      'Ese libro es muy interesante. (no la película).',
+      'Ese libro es muy interesante. (no solo un poco).',
+      'Ese libro es muy interesante. (la cualidad que destaco).'
+    ]
+  },
+  {
+    id: 'p5',
+    base: 'Hoy sí voy a terminar la tarea.',
+    variants: [
+      'Hoy sí voy a terminar la tarea. (no mañana).',
+      'Hoy sí voy a terminar la tarea. (esta vez de verdad).',
+      'Hoy sí voy a terminar la tarea. (nadie más).',
+      'Hoy sí voy a terminar la tarea. (no otra cosa).'
+    ]
+  },
+  {
+    id: 'p6',
+    base: 'Tú sabes lo que quiero decir.',
+    variants: [
+      'Tú sabes lo que quiero decir. (no otra persona).',
+      'Tú sabes lo que quiero decir. (sí lo entiendes).',
+      'Tú sabes lo que quiero decir. (no otra cosa).'
+    ]
+  }
+];
+
+const phraseResults = {}; // key -> result object
+const femaleThresholdHz = 250; // orientativo
+
+/* render phrases UI */
+const phrasesContainer = document.getElementById('phrasesContainer');
+phraseGroups.forEach(group=>{
+  const gDiv = document.createElement('div');
+  gDiv.style.borderTop = '1px solid rgba(255,255,255,0.03)';
+  gDiv.style.paddingTop = '10px';
+  const title = document.createElement('div'); title.style.fontWeight='800'; title.textContent = group.base;
+  gDiv.appendChild(title);
+  group.variants.forEach((v, idx)=>{
+    const key = group.id + '_v' + (idx+1);
+    const row = document.createElement('div'); row.style.display='flex'; row.style.justifyContent='space-between'; row.style.alignItems='center'; row.style.gap='8px'; row.style.marginTop='8px';
+    const left = document.createElement('div'); left.style.flex='1'; left.textContent = (idx+1) + '. ' + v;
+    const controls = document.createElement('div'); controls.style.display='flex'; controls.style.gap='8px'; controls.style.alignItems='center';
+    const measureBtn = document.createElement('button'); measureBtn.className='ghost'; measureBtn.textContent='Medir (3s)'; measureBtn.dataset.key=key;
+    measureBtn.addEventListener('click', ()=>measurePhrase(key, v, 3000));
+    const resultSpan = document.createElement('span'); resultSpan.id = key + '_result'; resultSpan.className='analysisBadge'; resultSpan.textContent = 'Sin medir';
+    controls.appendChild(measureBtn); controls.appendChild(resultSpan);
+    row.appendChild(left); row.appendChild(controls);
+    gDiv.appendChild(row);
+    phraseResults[key] = null;
+  });
+  phrasesContainer.appendChild(gDiv);
+});
+
+/* stats helper */
+function statsFromArray(arr){
+  const vals = arr.filter(v=>v && !isNaN(v));
+  if(vals.length===0) return null;
+  vals.sort((a,b)=>a-b);
+  const sum = vals.reduce((a,b)=>a+b,0);
+  const mean = sum/vals.length;
+  const median = vals.length%2 ? vals[(vals.length-1)/2] : (vals[vals.length/2-1]+vals[vals.length/2])/2;
+  const min = vals[0], max = vals[vals.length-1];
+  const range = max - min;
+  return { mean, median, min, max, range, n: vals.length };
+}
+
+/* measurePhrase (reutiliza pitchProcessor.tempBuf + graba audio del globalStream) */
+async function measurePhrase(key, text, durationMs){
+  if(!globalStream){
+    alert('Activa el micrófono primero (Iniciar micrófono).');
+    return;
+  }
+  const resultEl = document.getElementById(key + '_result') || null;
+  if(resultEl) resultEl.textContent = 'Midiendo…';
+  log('Medición iniciada: ' + text);
+
+  const mr = new MediaRecorder(globalStream);
+  const chunks = [];
+  mr.ondataavailable = e => { if(e.data && e.data.size) chunks.push(e.data); };
+
+  const samples = [];
+  const sampleInterval = 150;
+  let samplerTimer = null;
+  let elapsed = 0;
+
+  if(!pitchProcessor.initialized){
+    pitchProcessor.init(globalStream);
+  }
+
+  mr.start();
+  const startTime = Date.now();
+
+  await new Promise(resolve=>{
+    samplerTimer = setInterval(()=>{
+      try{
+        const buf = pitchProcessor.tempBuf;
+        if(buf){
+          pitchProcessor.analyserNode.getFloatTimeDomainData(buf);
+          const f = detectPitchAutoCorr(buf, pitchParams.sampleRate, pitchParams.minFreq, pitchParams.maxFreq);
+          samples.push(f === null ? null : Math.round(f*10)/10);
+        }
+      }catch(e){}
+      elapsed = Date.now() - startTime;
+      if(elapsed >= durationMs){
+        clearInterval(samplerTimer);
+        resolve();
+      }
+    }, sampleInterval);
+  });
+
+  await new Promise(resolve=>{
+    mr.onstop = ()=> resolve();
+    mr.stop();
+  });
+
+  const blob = new Blob(chunks, { type:'audio/webm' });
+  const url = URL.createObjectURL(blob);
+  const name = 'medicion_' + key + '_' + (new Date().toISOString().replace(/[:.]/g,'-')) + '.webm';
+  const rec = { name, blob, date: new Date().toISOString(), url, phraseKey: key, phraseText: text };
+  recordings.push(rec);
+  renderRecordings();
+
+  const numericSamples = samples.filter(s=>s!==null && !isNaN(s));
+  const sstats = statsFromArray(numericSamples);
+  const pctFemale = (numericSamples.length===0) ? 0 : (numericSamples.filter(v=>v>=femaleThresholdHz).length / numericSamples.length) * 100;
+  const result = {
+    key, text,
+    samples,
+    meanF0: sstats ? Math.round(sstats.mean*10)/10 : null,
+    medianF0: sstats ? Math.round(sstats.median*10)/10 : null,
+    minF0: sstats ? sstats.min : null,
+    maxF0: sstats ? sstats.max : null,
+    rangeF0: sstats ? Math.round(sstats.range*10)/10 : null,
+    nSamples: sstats ? sstats.n : 0,
+    pctFemale: Math.round(pctFemale*10)/10,
+    recordingName: name
+  };
+  phraseResults[key] = result;
+
+  let summary = '';
+  if(result.meanF0 === null){
+    summary = 'Sin detección';
+  } else {
+    summary = `mean ${result.meanF0} Hz · min ${result.minF0} · max ${result.maxF0} · ${result.pctFemale}% ≥ ${femaleThresholdHz}Hz`;
+  }
+  if(resultEl) resultEl.textContent = summary;
+  log('Medición finalizada: ' + key + ' → ' + summary);
+
+  if(key === 'texto') { const el = document.getElementById('texto_result'); if(el) el.textContent = summary; }
+  if(key === 'cuento') { const el = document.getElementById('cuento_result'); if(el) el.textContent = summary; }
+
+  // update small session summary in header
+  updateSmallSummaryLabel();
+}
+
+/* texto & cuento measure buttons */
+document.getElementById('measure_texto_btn').addEventListener('click', function(){ 
+  const text = `Lectura de texto en voz alta - shoegaze paragraph`;
+  measurePhrase('texto', text, 12000);
+});
+document.getElementById('measure_cuento_btn').addEventListener('click', function(){ 
+  const text = `Lectura de cuento - El faro y la mariposa`;
+  measurePhrase('cuento', text, 25000);
+});
+
+/* ---------- Borg ---------- */
+function createBorgWrap(actId, title){
+  if(document.getElementById(actId + '_borg_wrap')) return;
+  const parent = document.getElementById(actId);
+  if(!parent) return;
+  const wrap = document.createElement('div'); wrap.id = actId + '_borg_wrap'; wrap.className = 'borgWrap'; wrap.style.display = 'none';
+  const descriptors = ['Fatiga vocal','Sequedad','Dolor/irritación','Tensión/rigidez','Disfonía','Dificultad respiratoria','Esfuerzo','Sin cambios'];
+  let descHtml = '<div><strong>Sensaciones (marque las que apliquen):</strong><div class="borg-row">';
+  descriptors.forEach(function(d){ descHtml += '<label class="descriptor-label"><input type="checkbox" name="borg_desc_'+actId+'" value="'+d+'"> <span style="margin-left:6px">'+d+'</span></label>'; });
+  descHtml += '</div></div>';
+  const borgNumbers = [0,0.5,1,2,3,4,5,6,7,8.5,10];
+  let borgHtml = '<div style="margin-top:10px"><strong>Escala Borg CR-10 (seleccione uno):</strong><div class="borg-row">';
+  borgNumbers.forEach(function(opt){ var label = opt === 8.5 ? '8-9' : (opt % 1 === 0 ? String(opt) : '0.5'); borgHtml += '<label class="borg-option-label"><input type="radio" name="borg_num_'+actId+'" value="'+opt+'"> <span style="margin-left:6px">'+label+'</span></label>'; });
+  borgHtml += '</div></div>';
+  const saveBtn = '<div style="margin-top:10px"><button class="primary" id="'+actId+'_borg_save">Guardar</button> <button class="ghost" id="'+actId+'_borg_close">Cerrar</button> <span id="'+actId+'_borg_value" class="savedBadge"></span></div>';
+  wrap.innerHTML = '<div style="font-weight:800">Borg CR-10 — ' + title + '</div><div class="subtle" style="margin-top:6px">Registra la valoración percibida tras completar la actividad.</div>' + descHtml + borgHtml + saveBtn;
+  parent.appendChild(wrap);
+  document.getElementById(actId + '_borg_save').addEventListener('click', function(){
+    const checks = Array.from(document.querySelectorAll('input[name="borg_desc_' + actId + '"]:checked')).map(n=>n.value);
+    const sel = document.querySelector('input[name="borg_num_' + actId + '"]:checked');
+    if(!sel){ alert('Seleccione la valoración numérica de Borg antes de guardar.'); return; }
+    const v = sel.value;
+    wrap.dataset.borgValue = v;
+    wrap.dataset.borgDescs = checks.join('; ');
+    document.getElementById(actId + '_borg_value').textContent = 'Guardado: ' + v + (checks.length ? ' · ' + checks.join(', ') : '');
+    log('Borg guardado — ' + title + ': ' + v + ' — ' + checks.join('; '));
+  });
+  document.getElementById(actId + '_borg_close').addEventListener('click', function(){ wrap.style.display='none'; });
+}
+createBorgWrap('b1','BLOQUE 1 — /M/');
+createBorgWrap('b2','BLOQUE 2 — /U/');
+createBorgWrap('b3','BLOQUE 3 — Lecturas');
+document.querySelectorAll('.borg-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    const act = btn.getAttribute('data-act');
+    const wrap = document.getElementById(act + '_borg_wrap');
+    if(!wrap) return;
+    wrap.style.display = (wrap.style.display === 'none' || wrap.style.display === '') ? 'block' : 'none';
+  });
+});
+function collectBorgSummary(){
+  const arr = [];
+  ['b1','b2','b3'].forEach(function(id){
+    const wrap = document.getElementById(id + '_borg_wrap');
+    const title = (id==='b1'?'BLOQUE 1 - /M/': (id==='b2'?'BLOQUE 2 - /U/':'BLOQUE 3 - Lecturas'));
+    let borg = null, descs = '';
+    if(wrap){
+      borg = wrap.dataset.borgValue !== undefined ? wrap.dataset.borgValue : null;
+      descs = wrap.dataset.borgDescs || '';
+    }
+    arr.push({ id, title, borg, descs });
+  });
+  return arr;
+}
+
+/* ---------- Collect reps ---------- */
+function collectReps(){
+  const out = [];
+  for(const key in activities){
+    const checked = document.querySelectorAll('input[name="'+key+'_cb"]:checked').length;
+    out.push({ id: key, label: labels[key]||key, count: checked, goal: activities[key] || 0 });
+  }
+  return out;
+}
+
+/* ---------- Análisis resumido (nuevo) ---------- */
+function buildAnalysisSummary(){
+  // Aggregate phrase results
+  const keys = Object.keys(phraseResults);
+  let totalMeanSum = 0, totalMeanCount = 0;
+  let totalSamples = 0, femaleSamples = 0;
+  const measuredItems = [];
+  for(const k of keys){
+    const r = phraseResults[k];
+    if(r && r.meanF0 !== null){
+      measuredItems.push(r);
+      totalMeanSum += r.meanF0;
+      totalMeanCount += 1;
+      totalSamples += (r.nSamples || 0);
+      femaleSamples += ((r.nSamples || 0) * ((r.pctFemale||0)/100));
+    }
+  }
+  const avgMeanF0 = totalMeanCount ? Math.round((totalMeanSum/totalMeanCount)*10)/10 : null;
+  const pctFemaleOverall = totalSamples ? Math.round((femaleSamples / totalSamples)*1000)/10 : 0;
+
+  // Reps completion
+  const reps = collectReps();
+  let done = 0, goal = 0;
+  reps.forEach(r=>{ done += r.count; goal += (r.goal||0); });
+  const repsPct = goal ? Math.round((done / goal)*1000)/10 : 0;
+
+  // Borg average
+  const borgs = collectBorgSummary();
+  const borgVals = borgs.map(b=> (b.borg !== null && b.borg !== undefined) ? parseFloat(b.borg) : null ).filter(v=>v!==null && !isNaN(v));
+  const borgAvg = borgVals.length ? Math.round((borgVals.reduce((a,b)=>a+b,0)/borgVals.length)*10)/10 : null;
+
+  // SPL crosses
+  const tsArr = (Array.isArray(window.__a_lectura_texto_timestamps) ? window.__a_lectura_texto_timestamps : []);
+  const splVals = tsArr.map(t=> parseFloat(t.spl)).filter(v=>!isNaN(v));
+  const splAvg = splVals.length ? Math.round((splVals.reduce((a,b)=>a+b,0)/splVals.length)*10)/10 : null;
+
+  // Observaciones cortas
+  let obs = [];
+  if(avgMeanF0 !== null){
+    if(avgMeanF0 >= 240) obs.push('F0 media global orientada a rango femenino (valor medio: ' + avgMeanF0 + ' Hz).');
+    else if(avgMeanF0 >= 180) obs.push('F0 media global en rango andrógino (valor medio: ' + avgMeanF0 + ' Hz).');
+    else obs.push('F0 media global en rango típico masculino (valor medio: ' + avgMeanF0 + ' Hz).');
+  } else {
+    obs.push('No hay suficientes mediciones de F0 para estimar F0 media global.');
+  }
+  if(pctFemaleOverall > 50) obs.push('Mayoría de muestras femeninas (' + pctFemaleOverall + '% de muestras ≥ ' + femaleThresholdHz + ' Hz).');
+  else obs.push('Porcentaje de muestras ≥ ' + femaleThresholdHz + ' Hz: ' + pctFemaleOverall + '%.');
+
+  if(borgAvg !== null) obs.push('Borg promedio: ' + borgAvg + '.');
+  if(splAvg !== null) obs.push('Cruces SPL promedio: ' + splAvg + ' dB (' + (tsArr.length) + ' eventos).');
+
+  const summaryObj = {
+    avgMeanF0, pctFemaleOverall, totalMeasuredItems: totalMeanCount, totalSamples, repsDone: done, repsGoal: goal, repsPct, borgAvg, splAvg, splEvents: tsArr.length, observations: obs
+  };
+
+  // produce readable text
+  let text = 'Resumen analítico — Sesión\n';
+  text += 'Paciente: Matilde Pizarro Toro\n';
+  text += 'Fecha sesión: ' + (savedSessionDate || 'No guardada') + '\n\n';
+  text += '- Mediciones F0 (items medidos): ' + totalMeanCount + '\n';
+  if(avgMeanF0 !== null) text += '- F0 media global (media de medias): ' + avgMeanF0 + ' Hz\n';
+  text += '- Muestras totales de F0: ' + totalSamples + ' (pct muestras ≥ ' + femaleThresholdHz + ' Hz: ' + pctFemaleOverall + '%)\n';
+  text += '- Repeticiones completadas: ' + done + ' / ' + goal + ' (' + repsPct + '%)\n';
+  if(borgAvg !== null) text += '- Borg promedio: ' + borgAvg + '\n';
+  if(splAvg !== null) text += '- SPL promedio en cruces: ' + splAvg + ' dB (' + tsArr.length + ' eventos)\n';
+  text += '\nObservaciones:\n';
+  obs.forEach(o=> text += '- ' + o + '\n');
+
+  return { text, obj: summaryObj, csvLines: [
+    '---RESUMEN ANALÍTICO---',
+    'F0_media_global_Hz;' + (avgMeanF0 !== null ? avgMeanF0 : ''),
+    'Pct_muestras_>=_' + femaleThresholdHz + '_Hz;' + pctFemaleOverall,
+    'Items_medidos;' + totalMeanCount,
+    'Muestras_totales;' + totalSamples,
+    'Reps_completadas;' + done,
+    'Reps_objetivo;' + goal,
+    'Reps_pct;' + repsPct,
+    'Borg_promedio;' + (borgAvg !== null ? borgAvg : ''),
+    'SPL_promedio_cruces_dB;' + (splAvg !== null ? splAvg : ''),
+    'SPL_eventos;' + tsArr.length,
+    'Observaciones;"' + obs.join(' ; ') + '"'
+  ]};
+}
+
+/* ---------- CSV / PDF / ZIP (actualizados para incluir resumen analítico) ---------- */
+function generateSessionCSV(){
+  try{
+    const analysis = buildAnalysisSummary();
+    const lines = [];
+    // include analysis summary lines first
+    lines.push('Paciente;Matilde Pizarro Toro');
+    lines.push('Fecha de sesión;' + (savedSessionDate || 'No guardada'));
+    lines.push('Export Fecha;' + new Date().toLocaleString());
+    lines.push('');
+    // add analysis block
+    lines.push(...analysis.csvLines);
+    lines.push('');
+    lines.push('Repeticiones');
+    lines.push('Actividad;Repeticiones');
+    const reps = collectReps();
+    reps.forEach(function(r){ lines.push('"' + r.label + '";' + r.count); });
+
+    lines.push('');
+    lines.push('Lectura de frases - análisis por variante');
+    lines.push('Frase;Media_F0(Hz);Mediana_F0;Min_F0;Max_F0;Rango_F0;N_samples;Pct_>=femaleThreshold;Recording');
+    for(const key in phraseResults){
+      const res = phraseResults[key];
+      if(!res){ lines.push('"' + key + '";No medido;;;;;;;'); continue; }
+      lines.push('"' + (res.text||key).replace(/"/g,'""') + '";' + (res.meanF0||'') + ';' + (res.medianF0||'') + ';' + (res.minF0||'') + ';' + (res.maxF0||'') + ';' + (res.rangeF0||'') + ';' + (res.nSamples||0) + ';' + (res.pctFemale||0) + ';' + (res.recordingName||''));
+    }
+
+    lines.push('');
+    lines.push('Lectura visual - Timestamps (index;timestamp_iso;SPL_dB;counter)');
+    const tsArr = (Array.isArray(window.__a_lectura_texto_timestamps) ? window.__a_lectura_texto_timestamps : []);
+    if(tsArr.length === 0) lines.push('No timestamps registrados');
+    tsArr.forEach(function(t,i){ lines.push((i+1) + ';' + (t.ts||'') + ';' + (t.spl||'') + ';' + (t.count||'')); });
+
+    lines.push('');
+    lines.push('Grabaciones (nombre;fecha)');
+    recordings.forEach(function(r){ lines.push('"' + r.name.replace(/"/g,'""') + '";' + r.date); });
+
+    const csv = lines.join('\n');
+    const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'informe_sesion_matilde_' + (new Date()).toISOString().slice(0,10) + '.csv'; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),5000);
+    log('CSV generado y descargado.');
+  }catch(e){
+    alert('Error generando CSV: ' + e.message);
+  }
+}
+
+async function buildPdfBlob(){
+  const reps = collectReps();
+  const borgs = collectBorgSummary();
+  const tsArr = (Array.isArray(window.__a_lectura_texto_timestamps) ? window.__a_lectura_texto_timestamps : []);
+  const logTextEl = document.getElementById('logArea');
+  const logText = logTextEl ? (logTextEl.innerText || logTextEl.textContent || '') : '';
+  const analysis = buildAnalysisSummary();
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({unit:'pt',format:'a4',orientation:'portrait'});
+  const marginLeft = 40; let y = 40;
+  doc.setFont('helvetica','bold'); doc.setFontSize(14);
+  doc.text('Informe COMPLETO — SESIÓN DIARIA', marginLeft, y); y += 18;
+  doc.setFont('helvetica','normal'); doc.setFontSize(10);
+  doc.text('Paciente: Matilde Pizarro Toro', marginLeft, y); y += 12;
+  doc.text('Fecha de sesión: ' + (savedSessionDate || 'No guardada'), marginLeft, y); y += 12;
+  doc.text('Fecha de exportación: ' + new Date().toLocaleString(), marginLeft, y); y += 18;
+
+  // Analysis block
+  doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.text('G) Resumen analítico (automático)', marginLeft, y); y += 14;
+  doc.setFont('helvetica','normal'); doc.setFontSize(10);
+  const analysisLines = analysis.text.split('\n');
+  analysisLines.forEach(function(line){
+    if(y > 740){ doc.addPage(); y = 40; }
+    doc.text(line, marginLeft + 8, y);
+    y += 12;
+  });
+  y += 8;
+
+  doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.text('A) Repeticiones por actividad', marginLeft, y); y += 14;
+  doc.setFont('helvetica','normal'); doc.setFontSize(10);
+  reps.forEach(function(r){
+    if(y > 740){ doc.addPage(); y = 40; }
+    doc.text('- ' + r.label + ': ' + r.count, marginLeft + 8, y);
+    y += 12;
+  });
+  y += 8;
+
+  if(y > 720){ doc.addPage(); y = 40; }
+  doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.text('B) Lectura de frases y lecturas — Análisis', marginLeft, y); y += 14;
+  doc.setFont('helvetica','normal'); doc.setFontSize(10);
+  for(const key in phraseResults){
+    if(y > 740){ doc.addPage(); y = 40; }
+    const r = phraseResults[key];
+    if(!r){
+      doc.text('- ' + key + ': No medido', marginLeft + 8, y); y += 12;
+    } else {
+      doc.text('- ' + (r.text || key) + ' → mean ' + (r.meanF0||'') + ' Hz; min ' + (r.minF0||'') + '; max ' + (r.maxF0||'') + '; ' + (r.pctFemale||0) + '% ≥ ' + femaleThresholdHz + 'Hz; audio: ' + (r.recordingName||''), marginLeft + 8, y);
+      y += 12;
+    }
+  }
+  y += 8;
+
+  if(y > 720){ doc.addPage(); y = 40; }
+  doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.text('C) Registros Borg (actividades)', marginLeft, y); y += 14;
+  doc.setFont('helvetica','normal'); doc.setFontSize(10);
+  borgs.forEach(function(b){
+    if(y > 740){ doc.addPage(); y = 40; }
+    const descs = b.descs || '';
+    doc.text('- ' + b.title + ': Borg = ' + (b.borg !== null && typeof b.borg !== 'undefined' ? b.borg : 'No registrado') + (descs ? ('; ' + descs) : ''), marginLeft + 8, y);
+    y += 12;
+  });
+  y += 8;
+
+  if(y > 720){ doc.addPage(); y = 40; }
+  doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.text('D) Lectura visual — Timestamps de cruces', marginLeft, y); y += 14;
+  doc.setFont('helvetica','normal'); doc.setFontSize(10);
+  if(tsArr.length === 0){
+    doc.text('No hay timestamps registrados.', marginLeft + 8, y); y += 12;
+  } else {
+    tsArr.forEach(function(t,i){
+      if(y > 740){ doc.addPage(); y = 40; }
+      doc.text((i+1) + '. ' + (t.ts || '') + ' — ' + (t.spl || '') + ' dB — count: ' + (t.count||''), marginLeft + 8, y);
+      y += 12;
+    });
+  }
+  y += 12;
+
+  if(y > 700){ doc.addPage(); y = 40; }
+  doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.text('E) Grabaciones (lista)', marginLeft, y); y += 14;
+  doc.setFont('helvetica','normal'); doc.setFontSize(10);
+  if(recordings.length === 0){
+    doc.text('No hay grabaciones registradas.', marginLeft + 8, y); y += 12;
+  } else {
+    recordings.forEach(function(r,i){
+      if(y > 740){ doc.addPage(); y = 40; }
+      doc.text((i+1) + '. ' + r.name + ' — ' + (r.date || ''), marginLeft + 8, y);
+      y += 12;
+    });
+  }
+
+  y += 12;
+  if(y > 700){ doc.addPage(); y = 40; }
+  doc.setFont('helvetica','bold'); doc.setFontSize(12); doc.text('F) Registro de sesión (últimos eventos)', marginLeft, y); y += 12;
+  doc.setFont('helvetica','normal'); doc.setFontSize(9);
+  const wrapped = doc.splitTextToSize(logText || 'Sin registro', 520);
+  wrapped.forEach(function(line){
+    if(y > 760){ doc.addPage(); y = 40; }
+    doc.text(line, marginLeft, y);
+    y += 10;
+  });
+
+  const pdfBlob = doc.output('blob');
+  return pdfBlob;
+}
+
+async function exportInformeSesionCompleto(){
+  try{
+    const pdfBlob = await buildPdfBlob();
+    const url = URL.createObjectURL(pdfBlob);
+    const a = document.createElement('a'); a.href = url; a.download = 'informe_sesion_matilde.pdf'; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),5000);
+    log('PDF generado y descargado.');
+  }catch(err){
+    alert('Error generando PDF: ' + err.message);
+  }
+}
+
+async function exportZipSession(){
+  try{
+    log('Generando PDF y empaquetando en ZIP...');
+    const pdfBlob = await buildPdfBlob();
+    const zip = new JSZip();
+    zip.file('informe_sesion_matilde.pdf', pdfBlob);
+
+    const folder = zip.folder('grabaciones');
+    for(let i=0;i<recordings.length;i++){
+      const r = recordings[i];
+      if(r.blob){
+        folder.file(r.name, r.blob);
+      } else if(r.url){
+        try{
+          const fetched = await fetch(r.url);
+          const b = await fetched.blob();
+          folder.file(r.name, b);
+        }catch(e){
+          console.warn('No se pudo incluir audio:', r.name, e);
+        }
+      }
+    }
+
+    const analysis = buildAnalysisSummary();
+    const csvText = (function(){
+      const lines = [];
+      lines.push('Paciente;Matilde Pizarro Toro');
+      lines.push('Fecha de sesión;' + (savedSessionDate || 'No guardada'));
+      lines.push('Export Fecha;' + new Date().toLocaleString());
+      lines.push('');
+      lines.push(...analysis.csvLines);
+      lines.push('');
+      lines.push('Repeticiones');
+      lines.push('Actividad;Repeticiones');
+      const reps = collectReps();
+      reps.forEach(function(r){ lines.push('"' + r.label + '";' + r.count); });
+
+      lines.push('');
+      lines.push('Lectura de frases - análisis por variante');
+      lines.push('Frase;Media_F0(Hz);Mediana_F0;Min_F0;Max_F0;Rango_F0;N_samples;Pct_>=femaleThreshold;Recording');
+      for(const key in phraseResults){
+        const res = phraseResults[key];
+        if(!res){ lines.push('"' + key + '";No medido;;;;;;;'); continue; }
+        lines.push('"' + (res.text||key).replace(/"/g,'""') + '";' + (res.meanF0||'') + ';' + (res.medianF0||'') + ';' + (res.minF0||'') + ';' + (res.maxF0||'') + ';' + (res.rangeF0||'') + ';' + (res.nSamples||0) + ';' + (res.pctFemale||0) + ';' + (res.recordingName||''));
+      }
+
+      lines.push('');
+      lines.push('Lectura visual - Timestamps (index;timestamp_iso;SPL_dB;counter)');
+      const tsArr = (Array.isArray(window.__a_lectura_texto_timestamps) ? window.__a_lectura_texto_timestamps : []);
+      if(tsArr.length === 0) lines.push('No timestamps registrados');
+      tsArr.forEach(function(t,i){ lines.push((i+1) + ';' + (t.ts||'') + ';' + (t.spl||'') + ';' + (t.count||'')); });
+
+      lines.push('');
+      lines.push('Grabaciones (nombre;fecha)');
+      recordings.forEach(function(r){ lines.push('"' + r.name.replace(/"/g,'""') + '";' + r.date); });
+
+      return lines.join('\n');
+    })();
+
+    zip.file('informe_sesion_matilde.csv', csvText);
+
+    const contentBlob = await zip.generateAsync({type:'blob'});
+    const url = URL.createObjectURL(contentBlob);
+    const a = document.createElement('a'); a.href = url; a.download = 'sesion_matilde_export_' + (new Date()).toISOString().slice(0,10) + '.zip';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),5000);
+    log('ZIP generado y descargado (incluye PDF y grabaciones).');
+  }catch(e){
+    alert('Error generando ZIP: ' + (e.message || e));
+  }
+}
+
+/* ---------- Mostrar registro (simple) ---------- */
+function showLog(){
+  const la = document.getElementById('logArea');
+  const reps = collectReps();
+  const borgs = collectBorgSummary();
+  const analysis = buildAnalysisSummary();
+  let txt = 'Registro actual — Paciente: Matilde Pizarro Toro\n\nFecha de sesión: ' + (savedSessionDate || 'No guardada') + '\n\n' + analysis.text + '\n\nRepeticiones:\n';
+  reps.forEach(function(r){ txt += '- ' + r.label + ': ' + r.count + '\n'; });
+  txt += '\nLectura de frases:\n';
+  for(const k in phraseResults){
+    const r = phraseResults[k];
+    txt += '- ' + k + ': ' + (r ? ('mean ' + (r.meanF0||'') + ' Hz') : 'No medido') + '\n';
+  }
+  txt += '\nBorg:\n';
+  borgs.forEach(function(b){ txt += '- ' + b.title + ': ' + (b.borg!==null?b.borg:'No registrado') + (b.descs?(' · ' + b.descs):'') + '\n'; });
+  txt += '\nLectura visual: ' + ((Array.isArray(window.__a_lectura_texto_timestamps) && window.__a_lectura_texto_timestamps.length) ? window.__a_lectura_texto_timestamps.length + ' eventos registrados' : '0 eventos') + '\n\nGrabaciones:\n';
+  recordings.forEach(function(r){ txt += '- ' + r.name + ' (' + (r.date||'') + ')\n'; });
+  txt += '\n(Últimos eventos arriba)';
+  if(la) la.textContent = txt;
+  // update small label
+  updateSmallSummaryLabel();
+}
+
+/* ---------- Reset ---------- */
+function resetActivity(blockId){
+  const block = document.getElementById(blockId);
+  if(!block) return;
+  const cbs = block.querySelectorAll('input[type="checkbox"]');
+  cbs.forEach(cb => { cb.checked = false; });
+  log(`Reiniciado: ${blockId}`);
+}
+function resetAll(){
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+  window.__a_lectura_texto_counter = 0; window.__a_lectura_texto_prevBelow = true; window.__a_lectura_texto_timestamps = [];
+  const elC = document.getElementById('a_lectura_texto_counter'); if(elC) elC.textContent = '0';
+  ['b1','b2','b3'].forEach(function(id){ const wrap=document.getElementById(id + '_borg_wrap'); if(wrap){ delete wrap.dataset.borgValue; delete wrap.dataset.borgDescs; const valEl=document.getElementById(id + '_borg_value'); if(valEl) valEl.textContent=''; }});
+  for(const k in phraseResults) phraseResults[k] = null;
+  if(document.getElementById('texto_result')) document.getElementById('texto_result').textContent = 'Sin medir';
+  if(document.getElementById('cuento_result')) document.getElementById('cuento_result').textContent = 'Sin medir';
+  const la = document.getElementById('logArea'); if(la) la.textContent = 'Contadores reiniciados.';
+  log('Reiniciado: todos los contadores y registros.');
+  updateSmallSummaryLabel();
+}
+
+/* expose some functions for debugging in console */
+window.exportZipSession = exportZipSession;
+window.exportInformeSesionCompleto = exportInformeSesionCompleto;
+window.generateSessionCSV = generateSessionCSV;
+window.resetAll = resetAll;
+
+/* ========== DRAG / FLOAT / ACHICAR PANEL ========== */
+(function setupDraggablePanel(){
+  const panel = document.getElementById('floatingPanel');
+  const handle = document.getElementById('dragHandle');
+  const toggleBtn = document.getElementById('toggleDockBtn');
+  const minimizeBtn = document.getElementById('minimizeBtn');
+  const shrinkBtn = document.getElementById('shrinkBtn');
+  let dragging = false;
+  let offset = { x: 0, y: 0 };
+
+  // persist simple state
+  function persist(){
+    try{
+      const rect = panel.getBoundingClientRect();
+      const state = {
+        isFloating: panel.classList.contains('floating'),
+        pos: { left: Math.round(rect.left), top: Math.round(rect.top) },
+        isMinimized: panel.classList.contains('minimized'),
+        isCompact: panel.classList.contains('compact')
+      };
+      localStorage.setItem('afimart_panel_state', JSON.stringify(state));
+    }catch(e){}
+  }
+  // load
+  try{
+    const stored = localStorage.getItem('afimart_panel_state');
+    if(stored){
+      const obj = JSON.parse(stored);
+      if(obj.isFloating) { panel.classList.add('floating'); panel.style.left = (obj.pos && obj.pos.left)? obj.pos.left + 'px' : ''; panel.style.top = (obj.pos && obj.pos.top)? obj.pos.top + 'px' : ''; }
+      if(obj.isMinimized) panel.classList.add('minimized');
+      if(obj.isCompact) panel.classList.add('compact');
+    }
+  }catch(e){}
+
+  toggleBtn.addEventListener('click', function(){
+    if(panel.classList.contains('floating')){
+      panel.classList.remove('floating');
+      panel.style.left=''; panel.style.top='';
+      toggleBtn.textContent = 'Flotar';
+    } else {
+      panel.classList.add('floating');
+      // default position
+      panel.style.left = (window.innerWidth - 500) + 'px';
+      panel.style.top = '80px';
+      toggleBtn.textContent = 'Dock';
+    }
+    persist();
+  });
+
+  minimizeBtn.addEventListener('click', function(){
+    panel.classList.toggle('minimized');
+    persist();
+  });
+
+  shrinkBtn.addEventListener('click', function(){
+    panel.classList.toggle('compact');
+    persist();
+  });
+
+  // dragging
+  handle.addEventListener('mousedown', function(e){
+    if(!panel.classList.contains('floating')) return;
+    dragging = true;
+    const rect = panel.getBoundingClientRect();
+    offset = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    document.body.style.userSelect = 'none';
+    handle.style.cursor = 'grabbing';
+  });
+  document.addEventListener('mousemove', function(e){
+    if(!dragging) return;
+    const x = e.clientX - offset.x;
+    const y = e.clientY - offset.y;
+    const margin = 10;
+    const maxX = window.innerWidth - panel.offsetWidth - margin;
+    const maxY = window.innerHeight - panel.offsetHeight - margin;
+    const nx = Math.max(margin, Math.min(maxX, x));
+    const ny = Math.max(margin, Math.min(maxY, y));
+    panel.style.left = nx + 'px';
+    panel.style.top = ny + 'px';
+  });
+  document.addEventListener('mouseup', function(){
+    if(dragging){
+      dragging=false; handle.style.cursor='grab'; document.body.style.userSelect='';
+      persist();
+    }
+  });
+
+  // touch
+  handle.addEventListener('touchstart', function(ev){
+    if(!panel.classList.contains('floating')) return;
+    dragging = true;
+    const t = ev.touches[0];
+    const rect = panel.getBoundingClientRect();
+    offset = { x: t.clientX - rect.left, y: t.clientY - rect.top };
+    document.body.style.userSelect = 'none';
+  }, {passive:false});
+  document.addEventListener('touchmove', function(ev){
+    if(!dragging) return;
+    const t = ev.touches[0];
+    const x = t.clientX - offset.x;
+    const y = t.clientY - offset.y;
+    const margin = 10;
+    const maxX = window.innerWidth - panel.offsetWidth - margin;
+    const maxY = window.innerHeight - panel.offsetHeight - margin;
+    const nx = Math.max(margin, Math.min(maxX, x));
+    const ny = Math.max(margin, Math.min(maxY, y));
+    panel.style.left = nx + 'px';
+    panel.style.top = ny + 'px';
+    ev.preventDefault();
+  }, {passive:false});
+  document.addEventListener('touchend', function(){ if(dragging){ dragging=false; document.body.style.userSelect=''; persist(); } });
+
+})(); // setup panel
+
+/* ========== DRAG / RESIZE / MINIMIZE pitchWindow (independiente) ========== */
+(function setupPitchWindow(){
+  const win = document.getElementById('pitchWindow');
+  const handle = document.getElementById('pHandle');
+  const minBtn = document.getElementById('togglePitchMin');
+  const closeBtn = document.getElementById('closePitch');
+  const resizer = document.getElementById('pitchResizer');
+  const toggleVisibilityBtn = document.getElementById('togglePitchVisibilityBtn');
+  const pitchVisibilityLabel = document.getElementById('pitchVisibilityLabel');
+  let dragging = false, dragOffset={x:0,y:0}, resizing=false, startRect=null;
+
+  // load persisted
+  try{
+    const s = localStorage.getItem('afimart_pitch_state');
+    if(s){
+      const obj = JSON.parse(s);
+      if(obj.pos){ win.style.left = obj.pos.left + 'px'; win.style.top = obj.pos.top + 'px'; }
+      if(obj.size){ win.style.width = obj.size.w + 'px'; win.style.height = obj.size.h + 'px'; }
+      if(obj.minimized) win.classList.add('minimized');
+      if(obj.visible === false) { win.classList.add('hidden'); toggleVisibilityBtn.textContent = 'Mostrar gráfico F0'; pitchVisibilityLabel.textContent = 'Gráfico F0: oculto'; }
+      else { toggleVisibilityBtn.textContent = 'Ocultar gráfico F0'; pitchVisibilityLabel.textContent = 'Gráfico F0: visible (ventana flotante)'; }
+    } else {
+      // default: visible
+      toggleVisibilityBtn.textContent = 'Ocultar gráfico F0';
+      pitchVisibilityLabel.textContent = 'Gráfico F0: visible (ventana flotante)';
+    }
+  }catch(e){}
+
+  function persist(){ try{
+    const rect = win.getBoundingClientRect();
+    const state = { pos:{ left: Math.round(rect.left), top: Math.round(rect.top) }, size:{ w: Math.round(rect.width), h: Math.round(rect.height) }, minimized: win.classList.contains('minimized'), visible: !win.classList.contains('hidden') };
+    localStorage.setItem('afimart_pitch_state', JSON.stringify(state));
+  }catch(e){} }
+
+  handle.addEventListener('mousedown', function(e){
+    dragging = true;
+    const rect = win.getBoundingClientRect();
+    dragOffset = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    document.body.style.userSelect='none';
+    handle.style.cursor='grabbing';
+  });
+  document.addEventListener('mousemove', function(e){
+    if(dragging){
+      const x = e.clientX - dragOffset.x, y = e.clientY - dragOffset.y;
+      const margin=6;
+      const maxX = window.innerWidth - win.offsetWidth - margin;
+      const maxY = window.innerHeight - win.offsetHeight - margin;
+      win.style.left = Math.max(margin, Math.min(maxX, x)) + 'px';
+      win.style.top = Math.max(margin, Math.min(maxY, y)) + 'px';
+    } else if(resizing && startRect){
+      const w = Math.max(220, startRect.width + (e.clientX - startRect.mx));
+      const h = Math.max(120, startRect.height + (e.clientY - startRect.my));
+      win.style.width = w + 'px';
+      win.style.height = h + 'px';
+      drawPitchCanvas();
+    }
+  });
+  document.addEventListener('mouseup', function(){
+    if(dragging){ dragging=false; handle.style.cursor='grab'; document.body.style.userSelect=''; persist(); }
+    if(resizing){ resizing=false; startRect=null; persist(); }
+  });
+
+  // touch
+  handle.addEventListener('touchstart', function(ev){ dragging=true; const t=ev.touches[0]; const rect=win.getBoundingClientRect(); dragOffset={x:t.clientX-rect.left,y:t.clientY-rect.top}; document.body.style.userSelect='none'; }, {passive:false});
+  document.addEventListener('touchmove', function(ev){ if(!dragging) return; const t=ev.touches[0]; win.style.left = (t.clientX - dragOffset.x) + 'px'; win.style.top = (t.clientY - dragOffset.y) + 'px'; ev.preventDefault(); }, {passive:false});
+  document.addEventListener('touchend', function(){ if(dragging){ dragging=false; document.body.style.userSelect=''; persist(); } });
+
+  // resizer (mouse)
+  resizer.addEventListener('mousedown', function(e){
+    resizing = true;
+    const rect = win.getBoundingClientRect();
+    startRect = { width: rect.width, height: rect.height, mx: e.clientX, my: e.clientY };
+    document.body.style.userSelect='none';
+  });
+  // resizer touch
+  resizer.addEventListener('touchstart', function(ev){
+    resizing = true;
+    const t = ev.touches[0];
+    const rect = win.getBoundingClientRect();
+    startRect = { width: rect.width, height: rect.height, mx: t.clientX, my: t.clientY };
+  }, {passive:false});
+
+  minBtn.addEventListener('click', function(){
+    win.classList.toggle('minimized'); persist();
+  });
+  closeBtn.addEventListener('click', function(){
+    // Use the 'hidden' class instead of inline display:none so the toggle button
+    // and persisted state remain consistent. This prevents the window from
+    // being permanently hidden when closed via the ✕ button.
+    win.classList.add('hidden');
+    toggleVisibilityBtn.textContent = 'Mostrar gráfico F0';
+    pitchVisibilityLabel.textContent = 'Gráfico F0: oculto';
+    persist();
+  });
+
+  // toggle button at top header
+  toggleVisibilityBtn.addEventListener('click', function(){
+    if(win.classList.contains('hidden')){
+      win.classList.remove('hidden');
+      toggleVisibilityBtn.textContent = 'Ocultar gráfico F0';
+      pitchVisibilityLabel.textContent = 'Gráfico F0: visible (ventana flotante)';
+    } else {
+      win.classList.add('hidden');
+      toggleVisibilityBtn.textContent = 'Mostrar gráfico F0';
+      pitchVisibilityLabel.textContent = 'Gráfico F0: oculto';
+    }
+    persist();
+  });
+
+})(); // setupPitchWindow
+
+/* ---------- update small summary label ---------- */
+function updateSmallSummaryLabel(){
+  try{
+    const analysis = buildAnalysisSummary();
+    const el = document.getElementById('sessionSummarySmall');
+    if(!el) return;
+    let s = '';
+    if(analysis.obj.avgMeanF0 !== null) s += 'F0 media: ' + analysis.obj.avgMeanF0 + ' Hz · ';
+    s += 'Reps: ' + analysis.obj.repsDone + '/' + analysis.obj.repsGoal;
+    el.textContent = s;
+  }catch(e){}
+}
+
+/* ---------- Buttons small helpers (persist legacy) ---------- */
+(function initialSetupLabels(){
+  const tb = document.getElementById('toggleDockBtn');
+  if(tb) tb.textContent = (document.getElementById('floatingPanel').classList.contains('floating')) ? 'Dock' : 'Flotar';
+  updateSmallSummaryLabel();
+})();
+
+</script>
+</body>
+</html>
